@@ -18,7 +18,7 @@ The app is a fork of the [Privy NextJS template](https://github.com/privy-io/cre
 1. Clone this repository and open it in your terminal.
 
 ```sh
-git clone TODO
+git clone ....
 ```
 
 1. Install the necessary dependencies
@@ -70,7 +70,7 @@ const receipt = await irys.uploadFile("./myImage.png");
 
 ### Tagging
 
-Irys supports [adding metadata tags to your upload](https://docs.irys.xyz/developer-docs/tags), these tags are indexed and are queryable. In this app, we first create an array of tags and then pass those tags to the function `webIrys.uploadFile()` when uploading our image.
+Irys supports [adding metadata tags to your upload](https://docs.irys.xyz/developer-docs/tags), these tags are indexed and are queryable. In this app, we first create an array of tags, and then pass those tags to the function `webIrys.uploadFile()` when uploading our image.
 
 ```js
 const tags = [
@@ -85,7 +85,7 @@ console.log(`Data uploaded ==> https://gateway.irys.xyz/${receipt.id}`);
 
 ### Querying
 
-Uploads to Irys are queryable using [GraphQL](https://docs.irys.xyz/developer-docs/querying/graphql) and the [Irys query package](https://docs.irys.xyz/developer-docs/querying/query-package). In our app, we first query based on the application ID and content type and then do client-side filtering based on categories.
+Uploads to Irys are queryable using [GraphQL](https://docs.irys.xyz/developer-docs/querying/graphql) and the [Irys query package](https://docs.irys.xyz/developer-docs/querying/query-package). In our app, we query based on the application ID and content type, and then do client-side filtering based on categories.
 
 ```js
 const myQuery = new Query({ url: `https://node2.irys.xyz/graphql` });
@@ -130,4 +130,8 @@ All Irys functions are contained in `utils/irysFunctions.ts`.
 
 ## Screens
 
+<img src="./assets/home-screen.png" width="250" />
 <img src="./assets/login.png" width="250" />
+<img src="./assets/categories.png" width="250" />
+<img src="./assets/photo-feed.png" width="250" />
+<img src="./assets/take-photo.png" width="250" />
