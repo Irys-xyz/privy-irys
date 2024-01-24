@@ -104,7 +104,6 @@ export const uploadImage = async (originalBlob: Blob, w: ConnectedWallet, sendTr
 		if (category) {
 			tags.push({ name: "category", value: category });
 		}
-		console.log(`about to upload`);
 		//@ts-ignore
 		const receipt = await webIrys.uploadFile(imageFile, { tags });
 		console.log("🚀 ~ receipt:", receipt);
