@@ -1,6 +1,8 @@
-# Traveland Photologue
+# Build a PWA with Irys and Privy
 
-This is a demo app that teaches how to use [Privy](https://www.privy.io/) and [Irys](https://irys.xyz/) to create a mobile photo-sharing app.
+<img src="./assets/privy-github-header.png"  />
+
+This is a demo app that teaches how to use [Privy](https://www.privy.io/) and [Irys](https://irys.xyz/) to create a mobile photo-sharing app packaged as a Progressive Web App (PWA).
 
 In the app users can:
 

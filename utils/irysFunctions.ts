@@ -71,6 +71,8 @@ export const uploadImage = async (originalBlob: Blob, w: ConnectedWallet, sendTr
 	try {
 		// Initialize WebIrys
 		const webIrys = await getWebIrys(w, sendTransaction);
+
+		// Resize image to be less than 100 Kib
 		const resizedBlob = await resizeImage(originalBlob);
 
 		// Convert Blob to File
@@ -80,6 +82,7 @@ export const uploadImage = async (originalBlob: Blob, w: ConnectedWallet, sendTr
 		console.log("Image file size: ", imageFile.size);
 
 		// If imageFile.size < 100 Kib, it's free to upload, don't even check funding
+		// Adding this check as a code example, but in our case we know our image is less than 100 Kib
 		if (imageFile.size >= 102400) {
 			// Fund
 			const loadedBalance = webIrys.utils.fromAtomic(await webIrys.getLoadedBalance());
@@ -125,9 +128,7 @@ export const fetchImages = async ({ category }: { category: CATEGORIES | null })
 		{ name: "application-id", values: [process.env.NEXT_PUBLIC_APP_ID] },
 		{ name: "Content-Type", values: ["image/jpeg"] },
 	];
-	// if (category && category !== CATEGORIES.ALL) {
-	//   TAGS_TO_FILTER.push({ name: "category", values: [category] });
-	// }
+
 	try {
 		const results = await myQuery
 			.search("irys:transactions")
