@@ -19,9 +19,6 @@ The app is a fork of the [Privy NextJS template](https://github.com/privy-io/cre
 
 1. Clone this repository and open it in your terminal.
 
-```sh
-git clone ....
-```
 
 1. Install the necessary dependencies
 
