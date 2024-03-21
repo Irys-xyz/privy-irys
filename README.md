@@ -6,19 +6,18 @@ This is a demo app that teaches how to use [Privy](https://www.privy.io/) and [I
 
 In the app users can:
 
--   Login with Privy
--   Install on their home screens
--   Take a photo with front or back cameras
--   Categorize the photo
--   Permanently upload the photo using the [Irys SDK](https://docs.irys.xyz/developer-docs/irys-sdk)
--   View categorized photo feeds generated using the [Irys query package](https://docs.irys.xyz/developer-docs/querying/query-package)
+- Login with Privy
+- Install on their home screens
+- Take a photo with front or back cameras
+- Categorize the photo
+- Permanently upload the photo using the [Irys SDK](https://docs.irys.xyz/developer-docs/irys-sdk)
+- View categorized photo feeds generated using the [Irys query package](https://docs.irys.xyz/developer-docs/querying/query-package)
 
 The app is a fork of the [Privy NextJS template](https://github.com/privy-io/create-next-app), and is packaged as a PWA for mobile delivery.
 
 ## Setup
 
 1. Clone this repository and open it in your terminal.
-
 
 1. Install the necessary dependencies
 
@@ -60,7 +59,7 @@ To upload data to Irys, you:
 
 ```js
 // 1. Connect to a node
-const irys = new Irys({ url, token, key });
+const irys = new Irys({ network, token, key });
 // 2. Fund the node
 const fundTx = await irys.fund(irys.utils.toAtomic(0.05));
 // 3. Upload
@@ -112,18 +111,18 @@ const results = await myQuery
 
 All Irys functions are contained in `utils/irysFunctions.ts`.
 
--   `getWebIrys`: Connects to an Irys node using the injected provider from Privy
--   `uploadImage`: Permanently uploads an image
--   `fetchImages`: Uses the [Irys Query package](https://docs.irys.xyz/developer-docs/querying/query-package) to retrieve uploaded images
--   `resizeImage`: Resizes the image to be <100Kib
+- `getWebIrys`: Connects to an Irys node using the injected provider from Privy
+- `uploadImage`: Permanently uploads an image
+- `fetchImages`: Uses the [Irys Query package](https://docs.irys.xyz/developer-docs/querying/query-package) to retrieve uploaded images
+- `resizeImage`: Resizes the image to be <100Kib
 
 **Check out [Irys docs](https://docs.irys.xyz/) for more guidance around using Irys in your app!**
 
 ## Privy functions
 
--   `pages/_app.tsx` for how to use the `PrivyProvider` and initialize it with your Privy App ID
--   `pages/index.tsx` for how to use the `usePrivy` hook and implement a simple `login` button
--   `pages/dashboard.tsx` for how to use the `usePrivy` hook, fields like `ready`, `authenticated`, and `user`, and methods like `linkWallet` and `logout`
+- `pages/_app.tsx` for how to use the `PrivyProvider` and initialize it with your Privy App ID
+- `pages/index.tsx` for how to use the `usePrivy` hook and implement a simple `login` button
+- `pages/dashboard.tsx` for how to use the `usePrivy` hook, fields like `ready`, `authenticated`, and `user`, and methods like `linkWallet` and `logout`
 
 **Check out [Privy docs](https://docs.privy.io/) for more guidance around using Privy in your app!**
 

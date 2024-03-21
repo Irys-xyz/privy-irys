@@ -4,9 +4,6 @@ import Query from "@irys/query";
 import { WebIrys } from "@irys/sdk";
 import pica from "pica";
 
-const nodeUrl = "https://node2.irys.xyz";
-// const nodeUrl = "https://devnet.irys.xyz";
-
 export const getWebIrys = async (w: ConnectedWallet, sendTransaction: any) => {
 	const rpcURL = "https://polygon-mumbai.g.alchemy.com/v2/demo";
 	const token = "matic";
@@ -20,7 +17,7 @@ export const getWebIrys = async (w: ConnectedWallet, sendTransaction: any) => {
 			: { name: "privy", provider };
 
 	const webIrys = new WebIrys({
-		url: nodeUrl,
+		network: "devnet", // "devnet" || "mainnet"
 		token: token,
 		wallet: irysWallet,
 	});
